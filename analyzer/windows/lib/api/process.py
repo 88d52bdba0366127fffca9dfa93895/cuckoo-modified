@@ -557,8 +557,14 @@ class Process:
                 config.write("force-sleepskip={0}\n".format(cfgoptions["force-sleepskip"]))
             if "full-logs" in cfgoptions:
                 config.write("full-logs={0}\n".format(cfgoptions["full-logs"]))
+            if "force-flush" in cfgoptions:
+                config.write("force-flush={0}\n".format(cfgoptions["force-flush"]))
             if "no-stealth" in cfgoptions:
                 config.write("no-stealth={0}\n".format(cfgoptions["no-stealth"]))
+            if "buffer-max" in cfgoptions:
+                config.write("buffer-max={0}\n".format(cfgoptions["buffer-max"]))
+            if "large-buffer-max" in cfgoptions:
+                config.write("large-buffer-max={0}\n".format(cfgoptions["large-buffer-max"]))
             if "serial" in cfgoptions:
                 config.write("serial={0}\n".format(cfgoptions["serial"]))
             if "sysvol_ctimelow" in cfgoptions:

@@ -384,7 +384,18 @@ def pretty_print_arg(category, api_name, arg_name, arg_val):
                 12 : "WH_CALLWNDPROCRET",
                 13 : "WH_KEYBOARD_LL",
                 14 : "WH_MOUSE_LL"
-        }.get(val, None)                
+        }.get(val, None)
+    elif arg_name == "InfoLevel":
+        val = int(arg_val, 10)
+        return {
+                1 : "HTTP_QUERY_CONTENT_TYPE",
+                5 : "HTTP_QUERY_CONTENT_LENGTH",
+                6 : "HTTP_QUERY_CONTENT_LANGUAGE",
+                9 : "HTTP_QUERY_DATE",
+                10 : "HTTP_QUERY_EXPIRES",
+                18 : "HTTP_QUERY_VERSION",
+                21 : "HTTP_QUERY_RAW_HEADERS"
+        }.get(val, None)
     elif arg_name == "Disposition":
         val = int(arg_val, 10)
         return {
@@ -420,13 +431,18 @@ def pretty_print_arg(category, api_name, arg_name, arg_val):
         val = int(arg_val, 10)
         return {
                 0 : "SystemBasicInformation",
-                1 : "SystemExceptionInformation",
-                2 : "SystemInterruptInformation",
-                3 : "SystemLookasideInformation",
-                4 : "SystemPerformanceInformation",
+                1 : "SystemProcessorInformation",
+                2 : "SystemPerformanceInformation",
+                3 : "SystemTimeOfDayInformation",
+                4 : "SystemPathInformation",
                 5 : "SystemProcessInformation",
+                7 : "SystemDeviceInformation",
                 8 : "SystemProcessorPerformanceInformation",
+                11 : "SystemModuleInformation",
+                17 : "SystemObjectInformation",
                 21 : "SystemFileCacheInformation",
+                23 : "SystemInterruptInformation",
+                33 : "SystemExceptionInformation",
                 35 : "SystemKernelDebuggerInformation",
                 44 : "SystemCurrentTimeZoneInformation",
                 66 : "SystemDynamicTimeZoneInformation",
@@ -1422,6 +1438,8 @@ def get_vt_consensus(namelist):
         "bmbg",
         "mikey",
         "kazy",
+        "x97m",
+        "msword",
     ]
 
     finaltoks = defaultdict(int)
