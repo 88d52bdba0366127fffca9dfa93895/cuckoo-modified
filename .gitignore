@@ -36,3 +36,5 @@ UpgradeLog.htm
 
 # Ignore out-of-scope repo
 modules/signatures/
+conf/
+errors.txt
